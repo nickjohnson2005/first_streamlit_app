@@ -14,20 +14,20 @@ streamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-#def get_fruit_load_list():
-#  with mycnx.cursor() as my_cur:
-#    with my_cur.execute("select * from fruit_load_list")
-#    return my_cur.fetchall()
-  
 #Add a button to load the fruit
+streamlit.header("The fruit load list contains:")
+
+def_get_fruit_load_list():
+  
 if streamlit.button('Get Fruit Load List'):
-  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-  my_cur = my_cnx.cursor()
-  my_cur.execute("select * from fruit_load_list")
-  my_data_rows = my_cur.fetchall()
-  my_cnx.close()
-  streamlit.header("The fruit load list contains:")
-  streamlit.dataframe(my_data_rows)
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("select * from fruit_load_list")
+    return my_cur.fetchall()
+
+  if streamlit.button('Gret Fruit Load List'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    my_data_rows = get_fruit_load_list()
+    streamlit.dataframe(my_data_rows)
 
 #Allow the end user to add fruit to the list
 def insert_row_snowflake(new_fruit):
