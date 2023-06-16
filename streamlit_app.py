@@ -14,10 +14,10 @@ streamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-def get_fruit_load_list():
-  with mycnx.cursor() as my_cur:
-    with my_cur.execute("select * from fruit_load_list")
-    return my_cur.fetchall()
+#def get_fruit_load_list():
+#  with mycnx.cursor() as my_cur:
+#    with my_cur.execute("select * from fruit_load_list")
+#    return my_cur.fetchall()
   
 #Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
