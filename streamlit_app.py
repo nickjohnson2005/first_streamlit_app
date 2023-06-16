@@ -4,8 +4,15 @@ import pandas as pd
 import requests
 from urllib.error import URLError
 
+streamlit.title("'My Mom's New Healthy Diner'")
 
-streamlit.header("The fruit load list contains")
+streamlit.header('Breakfast Menu')
+streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
+streamlit.text('🥗 Kale, Spinach, & Rocket Smoothie')
+streamlit.text('🐔 Hard-Boiled Free-Range Egg')
+streamlit.text('🥑🍞 Avocado Toast')
+
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 def get_fruit_load_list():
   with mycnx.cursor() as my_cur:
@@ -30,15 +37,6 @@ streamlit.write('Thanks for adding', title)
 
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
-streamlit.title("'My Mom's New Healthy Diner'")
-
-streamlit.header('Breakfast Menu')
-streamlit.text('🥣 Omega 3 & Blueberry Oatmeal')
-streamlit.text('🥗 Kale, Spinach, & Rocket Smoothie')
-streamlit.text('🐔 Hard-Boiled Free-Range Egg')
-streamlit.text('🥑🍞 Avocado Toast')
-
-streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 
 my_fruit_list=pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
