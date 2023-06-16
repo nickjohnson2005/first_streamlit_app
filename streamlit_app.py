@@ -17,6 +17,8 @@ streamlit.dataframe(my_data_rows)
 title = streamlit.text_input('What would you like to add', 'jackfruit')
 streamlit.write('Thanks for adding', title)
 
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
 streamlit.title("'My Mom's New Healthy Diner'")
 
 streamlit.header('Breakfast Menu')
