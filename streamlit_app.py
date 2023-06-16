@@ -14,8 +14,8 @@ streamlit.dataframe(my_data_rows)
 #show_added_fruits = my_data_rows.loc[add_my_fruit]
 #streamlit.write('Thanks for adding', my_data_rows.loc[add_my_fruit])
 
-title = st.text_input('What would you like to add', 'jackfruit')
-st.write('Thanks for adding', title)
+title = streamlit.text_input('What would you like to add', 'jackfruit')
+streamlit.write('Thanks for adding', title)
 
 streamlit.title("'My Mom's New Healthy Diner'")
 
