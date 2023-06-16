@@ -34,10 +34,6 @@ def insert_row_snowflake(new_fruit):
 title = streamlit.text_input('What would you like to add', 'jackfruit')
 streamlit.write('Thanks for adding', title)
 
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
-
-
-
 my_fruit_list=pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
